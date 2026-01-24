@@ -1,4 +1,4 @@
-**File Structure:**
+File Structure:
 
 PATHCTM/
 │
