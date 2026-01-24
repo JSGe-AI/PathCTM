@@ -1,14 +1,3 @@
-File Structure:
-
-PATHCTM/
-│
-├── assets/
-├── models/
-│
-└── train_new_8_top10_synout/
-      ├── CONCH_4-scale_inference.py
-      └── CONCH_4-scale_train.py   
-
 
 
 train:
