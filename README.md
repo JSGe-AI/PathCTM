@@ -3,7 +3,8 @@
 
 This repository implements an efficient scale-space continuous inference framework for gigapixel whole slide images (WSI). The model mimics the diagnostic process of pathologists by performing continuous reasoning and feature aggregation across multiple spatial resolutions.
 
-🌟 Key Features
+🌟 **Key Features**
+
 Scale-Space Continuous Reasoning: PathCTM performs cross-scale continuous reasoning in the spatial dimension, establishing a coherent coarse-to-fine scale-wise inference trajectory. 
 
 Attention-Guided Region Pruning: High-resolution features are selectively loaded for informative regions, thereby eliminating the inherent speed bottlenecks of WSI analysis.
@@ -11,8 +12,10 @@ Attention-Guided Region Pruning: High-resolution features are selectively loaded
 Confidence-Aware Early Stopping: Considering the varying difficulty of diagnostic cases, PathCTM incorporates a confidence-aware early stopping strategy based on entropy minimization.
 
 
-📂 Project Structure
-📊 Data Preparation
+📂 **Project Structure**
+
+📊 **Data Preparation**
+
 1. Feature Extraction
    Use foundation models (UNI v2 or CONCH v1.5) as the feature extractor. 
 
@@ -20,7 +23,8 @@ Confidence-Aware Early Stopping: Considering the varying difficulty of diagnosti
 
 Note: The system automatically resolves relative paths for all four scales (0_1024, 1_1024, 1_512, 0_8192) and their corresponding topological relationship files (relation) based on the root path provided in your text file.
 
-🚀 Getting Started
+🚀 **Getting Started**
+
 1. Environment Setup
 Recommended: Python 3.9+ and PyTorch 2.0+ with CUDA support.
 
