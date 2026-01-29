@@ -17,9 +17,15 @@ Confidence-Aware Early Stopping: Considering the varying difficulty of diagnosti
 📊 **Data Preparation**
 
 1. Feature Extraction
-   Use foundation models (UNI v2 or CONCH v1.5) as the feature extractor. 
-
-2. File OrganizationData is managed via .txt files where each line follows the format:[label];[path_to_feature_file]
+   Use foundation models (UNI v2 or CONCH v1.5) as the feature extractor.
+   ```python
+   from PIL import Image
+   image = Image.open("path_to_image.jpg")
+   image = preprocess(image).unsqueeze(0)
+   with torch.inference_mode():
+       image_embs = model.encode_image(image, proj_contrast=False, normalize=False)
+   ```
+3. File OrganizationData is managed via .txt files where each line follows the format:[label];[path_to_feature_file]
 
 Note: The system automatically resolves relative paths for all four scales (0_1024, 1_1024, 1_512, 0_8192) and their corresponding topological relationship files (relation) based on the root path provided in your text file.
 
@@ -30,17 +36,17 @@ Recommended: Python 3.9+ and PyTorch 2.0+ with CUDA support.
 
 2. Training
 Run CONCH_4-scale_train.py to start training. The script supports Mixed Precision (AMP) and Model Compilation for faster throughput.
-
+   ```python
     python CONCH_4-scale_train.py \
         --train_h5_dir /path/to/train.txt \
         --val_h5_dir   /path/to/val.txt \
         --log_dir logs/exp1 \
         --num_class   \
         --device 0
-
-3. Inference & Evaluation
+   ```
+4. Inference & Evaluation
 Use CONCH_4-scale_inference.py to evaluate the model and calculate performance metrics and efficiency statistics (average patch count and inference time).
-
+   ```python
     python CONCH_4-scale_inference.py \
         --batch_size_test 1 \
         --device 0 \
@@ -50,3 +56,4 @@ Use CONCH_4-scale_inference.py to evaluate the model and calculate performance m
         --test_h5_dir "/path/to/test_list.txt" \
         --checkpoint_path "/path/to/checkpoint.pth" \
         --log_dir "./logs/"
+   ```
