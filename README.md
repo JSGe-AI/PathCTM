@@ -24,22 +24,22 @@ Recommended: Python 3.9+ and PyTorch 2.0+ with CUDA support.
 2. Training
 Run CONCH_4-scale_train.py to start training. The script supports Mixed Precision (AMP) and Model Compilation for faster throughput.
 
-python CONCH_4-scale_train.py \
-    --train_h5_dir /path/to/train.txt \
-    --val_h5_dir   /path/to/val.txt \
-    --log_dir logs/exp1 \
-    --num_class   \
-    --device 0
+    python CONCH_4-scale_train.py \
+        --train_h5_dir /path/to/train.txt \
+        --val_h5_dir   /path/to/val.txt \
+        --log_dir logs/exp1 \
+        --num_class   \
+        --device 0
 
 3. Inference & Evaluation
 Use CONCH_4-scale_inference.py to evaluate the model and calculate performance metrics and efficiency statistics (average patch count and inference time).
 
-python CONCH_4-scale_inference.py \
-    --batch_size_test 1 \
-    --device 0 \
-    --num_class 7 \
-    --threshold 0.9 \
-    --fold n \
-    --test_h5_dir "/path/to/test_list.txt" \
-    --checkpoint_path "/path/to/checkpoint.pth" \
-    --log_dir "./logs/"
+    python CONCH_4-scale_inference.py \
+        --batch_size_test 1 \
+        --device 0 \
+        --num_class 7 \
+        --threshold 0.9 \
+        --fold n \
+        --test_h5_dir "/path/to/test_list.txt" \
+        --checkpoint_path "/path/to/checkpoint.pth" \
+        --log_dir "./logs/"
