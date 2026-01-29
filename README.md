@@ -1,5 +1,6 @@
 
-Thinking in Scales: Accelerating Gigapixel Pathology Image Analysis via  Adaptive Continuous Reasoning
+# **Thinking in Scales: Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning**
+
 This repository implements an efficient scale-space continuous inference framework for gigapixel whole slide images (WSI). The model mimics the diagnostic process of pathologists by performing continuous reasoning and feature aggregation across multiple spatial resolutions.
 
 🌟 Key Features
