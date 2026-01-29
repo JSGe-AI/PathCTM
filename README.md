@@ -1,21 +1,23 @@
 
 Thinking in Scales: Accelerating Gigapixel Pathology Image Analysis via  Adaptive Continuous Reasoning
-This repository contains the official implementation of a multi-scale Whole-Slide Image (WSI) analysis framework based on the Continuous Thought Machine (CTM). The model mimics the diagnostic process of pathologists by performing continuous reasoning and feature aggregation across multiple spatial resolutions.
+This repository implements an efficient scale-space continuous inference framework for gigapixel whole slide images (WSI). The model mimics the diagnostic process of pathologists by performing continuous reasoning and feature aggregation across multiple spatial resolutions.
 
 🌟 Key Features
-Multi-Scale Fusion: Jointly processes features from four distinct scales (1024, 2048, 4096, and 8192) to capture both cellular details and global tissue architecture.
+Scale-Space Continuous Reasoning: PathCTM performs cross-scale continuous reasoning in the spatial dimension, establishing a coherent coarse-to-fine scale-wise inference trajectory. 
 
-Continuous Reasoning (CTM): Utilizes a trainable "thought" iteration mechanism, allowing the model to dynamically refine its predictions over multiple steps.
+Attention-Guided Region Pruning: High-resolution features are selectively loaded for informative regions, thereby eliminating the inherent speed bottlenecks of WSI analysis.
 
-Dynamic Inference Control: Supports a confidence threshold during inference to balance diagnostic accuracy with computational efficiency.
+Confidence-Aware Early Stopping: Considering the varying difficulty of diagnostic cases, PathCTM incorporates a confidence-aware early stopping strategy based on entropy minimization.
 
-Baseline Comparisons: Includes implementations for LSTM and Feed-Forward (FF) architectures for rigorous benchmarking.
 
 📂 Project Structure
 📊 Data Preparation
-Data is managed via .txt files where each line follows the format: [label];[path_to_feature_file]
+1. Feature Extraction
+   Use foundation models (UNI v2 or CONCH v1.5) as the feature extractor. 
 
-Note: The system automatically resolves relative paths for all four scales (0_1024, 1_1024, 1_512, 0_8192) and their corresponding topological relationship files (relation) based on the provided root path in the text file.
+2. File OrganizationData is managed via .txt files where each line follows the format:[label];[path_to_feature_file]
+
+Note: The system automatically resolves relative paths for all four scales (0_1024, 1_1024, 1_512, 0_8192) and their corresponding topological relationship files (relation) based on the root path provided in your text file.
 
 🚀 Getting Started
 1. Environment Setup
@@ -37,7 +39,7 @@ Use CONCH_4-scale_inference.py to evaluate the model and calculate performance m
     python CONCH_4-scale_inference.py \
         --batch_size_test 1 \
         --device 0 \
-        --num_class 7 \
+        --num_class n \
         --threshold 0.9 \
         --fold n \
         --test_h5_dir "/path/to/test_list.txt" \
