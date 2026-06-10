@@ -140,7 +140,7 @@ Run training from the repository root:
 cd PathCTM-main
 conda activate pathctm
 
-python train/CONCH_4-scale_train.py \
+python train-test/CONCH_4-scale_train.py \
   --device 0 \
   --fold 1 \
   --num_class 3 \
@@ -157,7 +157,7 @@ Run evaluation from the repository root:
 
 
 ```bash
-python train/CONCH_4-scale_test.py \
+python train-test/CONCH_4-scale_test.py \
   --device 0 \
   --fold 1 \
   --num_class 3 \
