@@ -183,9 +183,9 @@ This repository is developed based on the original CTM codebase. We sincerely th
 If you find this repository useful, please cite the PathCTM paper:
 
 ```bibtex
-@article{ge2026pathctm,
+@article{ge2026thinking,
   title={Thinking in Scales: Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning},
-  author={Ge, Jiusong and Zhan, Yingkang and Zhao, Wenjie and Zhang, Di and Wang, Ke and Liu, Jiashuai and Yang, Chunze and Li, Chengzu and Zhang, Jian and Dong, Yuxin and Zhang, Ni and Liu, Qidong and Crispin-Ortuzar, Mireia and Fu, Huazhu and Li, Chen and Gao, Zeyu},
+  author={Ge, Jiusong and Zhan, Yingkang and Zhao, Wenjie and Zhang, Di and Wang, Ke and Liu, Jiashuai and Yang, Chunze and Li, Chengzu and Zhang, Jian and Dong, Yuxin and others},
   journal={arXiv preprint arXiv:2605.19491},
   year={2026}
 }
