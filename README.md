@@ -162,7 +162,7 @@ python train-test/CONCH_4-scale_test.py \
   --fold 1 \
   --num_class 3 \
   --threshold 1.0 \
-  --test_h5_dir /path/to/fold_1_val.txt \
+  --test_h5_dir /path/to/fold_1_test.txt \
   --checkpoint_path /path/to/best_AUC_checkpoint.pt \
   --log_dir /path/to/test_logs
 ```
