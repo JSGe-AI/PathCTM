@@ -40,7 +40,7 @@ PathCTM expects three kinds of files:
 
 ### 1. Slide List File
 
-Each line in the training or validation list should follow:
+Each line in the training or testing list should follow:
 
 ```text
 label;/absolute/path/to/0_1024_3cls/<class_id>/<slide_id>.npy
